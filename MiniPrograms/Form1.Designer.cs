@@ -40,9 +40,18 @@
       this.btn_Minus = new System.Windows.Forms.Button();
       this.btn_Reset = new System.Windows.Forms.Button();
       this.lbl_Count = new System.Windows.Forms.Label();
+      this.btn_Random = new System.Windows.Forms.Button();
+      this.lbl_Random = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
+      this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+      this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
+      this.tabPage2.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -113,12 +122,18 @@
       // 
       // tabPage2
       // 
+      this.tabPage2.Controls.Add(this.numericUpDown2);
+      this.tabPage2.Controls.Add(this.numericUpDown1);
+      this.tabPage2.Controls.Add(this.label3);
+      this.tabPage2.Controls.Add(this.label2);
+      this.tabPage2.Controls.Add(this.lbl_Random);
+      this.tabPage2.Controls.Add(this.btn_Random);
       this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(308, 189);
+      this.tabPage2.Size = new System.Drawing.Size(221, 131);
       this.tabPage2.TabIndex = 1;
-      this.tabPage2.Text = "tabPage2";
+      this.tabPage2.Text = "Генератор";
       this.tabPage2.UseVisualStyleBackColor = true;
       // 
       // btn_Plus
@@ -164,6 +179,67 @@
       this.lbl_Count.TabIndex = 3;
       this.lbl_Count.Text = "0";
       // 
+      // btn_Random
+      // 
+      this.btn_Random.Location = new System.Drawing.Point(102, 8);
+      this.btn_Random.Name = "btn_Random";
+      this.btn_Random.Size = new System.Drawing.Size(77, 20);
+      this.btn_Random.TabIndex = 0;
+      this.btn_Random.Text = "Задать";
+      this.btn_Random.UseVisualStyleBackColor = true;
+      this.btn_Random.Click += new System.EventHandler(this.btn_Random_Click);
+      // 
+      // lbl_Random
+      // 
+      this.lbl_Random.AutoSize = true;
+      this.lbl_Random.Location = new System.Drawing.Point(101, 36);
+      this.lbl_Random.Name = "lbl_Random";
+      this.lbl_Random.Size = new System.Drawing.Size(35, 13);
+      this.lbl_Random.TabIndex = 1;
+      this.lbl_Random.Text = "label1";
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(6, 10);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(20, 13);
+      this.label2.TabIndex = 2;
+      this.label2.Text = "От";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(6, 36);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(22, 13);
+      this.label3.TabIndex = 3;
+      this.label3.Text = "До";
+      // 
+      // numericUpDown1
+      // 
+      this.numericUpDown1.Location = new System.Drawing.Point(32, 8);
+      this.numericUpDown1.Name = "numericUpDown1";
+      this.numericUpDown1.Size = new System.Drawing.Size(64, 20);
+      this.numericUpDown1.TabIndex = 4;
+      this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      // 
+      // numericUpDown2
+      // 
+      this.numericUpDown2.Location = new System.Drawing.Point(32, 34);
+      this.numericUpDown2.Name = "numericUpDown2";
+      this.numericUpDown2.Size = new System.Drawing.Size(63, 20);
+      this.numericUpDown2.TabIndex = 5;
+      this.numericUpDown2.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +255,10 @@
       this.tabControl1.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);
       this.tabPage1.PerformLayout();
+      this.tabPage2.ResumeLayout(false);
+      this.tabPage2.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -198,6 +278,12 @@
     private System.Windows.Forms.Button btn_Minus;
     private System.Windows.Forms.Button btn_Plus;
     private System.Windows.Forms.TabPage tabPage2;
+    private System.Windows.Forms.NumericUpDown numericUpDown2;
+    private System.Windows.Forms.NumericUpDown numericUpDown1;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label lbl_Random;
+    private System.Windows.Forms.Button btn_Random;
   }
 }
 

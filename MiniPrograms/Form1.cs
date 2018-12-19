@@ -13,10 +13,12 @@ namespace MiniPrograms
   public partial class MainForm : Form
   {
     int count = 0;
+    Random rnd;
 
     public MainForm()
     {
       InitializeComponent();
+      rnd = new Random();
     }
 
     private void tsmi_Exit_Click(object sender, EventArgs e)
@@ -47,6 +49,13 @@ namespace MiniPrograms
     {
       count = 0;
       lbl_Count.Text = Convert.ToString(count);
+    }
+
+    private void btn_Random_Click(object sender, EventArgs e)
+    {
+      int n;
+      n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+      lbl_Random.Text = n.ToString();
     }
   }
 }
