@@ -55,7 +55,74 @@ namespace MiniPrograms
     {
       int n;
       n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+
+      if (chbx_Random.Checked)
+      {
+        int i = 0;
+        while (tbx_Random.Text.IndexOf(n.ToString()) != -1 && i <= 1000)
+        {
+          n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+          i++;
+        }
+        if (i <= 1000)
+          tbx_Random.AppendText(n + "\n");
+      }
+      else tbx_Random.AppendText(n + "\n");
       lbl_Random.Text = n.ToString();
+    }
+
+    private void btn_RndClear_Click(object sender, EventArgs e)
+    {
+      tbx_Random.Clear();
+    }
+
+    private void btn_RdmCopy_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText(tbx_Random.Text);
+    }
+
+    private void tsmi_InsertDate_Click(object sender, EventArgs e)
+    {
+      tbx_Note.AppendText(DateTime.Now.ToShortDateString());
+    }
+
+    private void tsmi_InsertTime_Click(object sender, EventArgs e)
+    {
+      tbx_Note.AppendText(DateTime.Now.ToShortTimeString());
+    }
+
+    private void tsmi_NoteSave_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        tbx_Note.SaveFile("Notepad.rtf");
+      }
+      catch (Exception)
+      {
+        MessageBox.Show("Ошибка при сохранении");
+      }
+    }
+
+    void LoadNote()
+    {
+      try
+      {
+        tbx_Note.LoadFile("Notepad.rtf");
+      }
+      catch (Exception)
+      {
+        MessageBox.Show("Ошибка при загрузке");
+      }
+    }
+
+    private void tsmi_NoteLoad_Click(object sender, EventArgs e)
+    {
+      LoadNote();
+    }
+
+    private void MainForm_Load(object sender, EventArgs e)
+    {
+      LoadNote();
     }
   }
 }
