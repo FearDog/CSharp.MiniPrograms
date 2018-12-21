@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MiniPrograms
@@ -14,6 +7,7 @@ namespace MiniPrograms
   {
     int count = 0;
     Random rnd;
+    char[] spec_Char = new char[] {'!','@','#','$','%','^','&','*','(',')','_','-','+','=','?','.',','};
 
     public MainForm()
     {
@@ -53,22 +47,29 @@ namespace MiniPrograms
 
     private void btn_Random_Click(object sender, EventArgs e)
     {
-      int n;
-      n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+      int n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
+      int i = 0;
+      string s = "";
 
       if (chbx_Random.Checked)
       {
-        int i = 0;
-        while (tbx_Random.Text.IndexOf(n.ToString()) != -1 && i <= 1000)
+        while (((chbx_RandomChar.Checked && tbx_Random.Text.IndexOf(Convert.ToChar(n).ToString()) != -1) ||
+         (!chbx_RandomChar.Checked && tbx_Random.Text.IndexOf(n.ToString()) != -1)) && i <= 1000)
         {
           n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value) + 1);
           i++;
         }
-        if (i <= 1000)
-          tbx_Random.AppendText(n + "\n");
       }
-      else tbx_Random.AppendText(n + "\n");
-      lbl_Random.Text = n.ToString();
+
+      if (i <= 1000)
+      {
+        if (chbx_RandomChar.Checked)
+          s = Convert.ToChar(n).ToString();
+        else
+          s = n.ToString();
+        tbx_Random.AppendText(s + "\n");
+      }
+      lbl_Random.Text = s;
     }
 
     private void btn_RndClear_Click(object sender, EventArgs e)
@@ -123,6 +124,36 @@ namespace MiniPrograms
     private void MainForm_Load(object sender, EventArgs e)
     {
       LoadNote();
+      chlb_Password.SetItemChecked(0, true);
+      chlb_Password.SetItemChecked(1, true);
+    }
+
+    private void btn_PassCreate_Click(object sender, EventArgs e)
+    {
+      if (chlb_Password.CheckedItems.Count <= 0) return;
+      string pass = "";
+      for (int i = 0; i < nud_PassLength.Value; i++)
+      {
+        int n = rnd.Next(0, chlb_Password.CheckedItems.Count);
+        string s = chlb_Password.CheckedItems[n].ToString();
+        switch (s)
+        {
+          case "Цифры":
+            pass += rnd.Next(10).ToString();
+            break;
+          case "Прописные буквы":
+            pass += Convert.ToChar(rnd.Next(65,90));
+            break;
+          case "Строчные буквы":
+            pass += Convert.ToChar(rnd.Next(97, 122));
+            break;
+          case "Спец. символы":
+            pass += spec_Char[rnd.Next(spec_Char.Length)];
+            break;
+        }
+        tbx_Password.Text = pass;
+        Clipboard.SetText(pass);
+      }
     }
   }
 }

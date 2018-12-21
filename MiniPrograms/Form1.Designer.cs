@@ -31,10 +31,25 @@
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tsmi_Exit = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsmi_Note = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsmi_InsertDate = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsmi_InsertTime = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.tsmi_NoteSave = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsmi_NoteLoad = new System.Windows.Forms.ToolStripMenuItem();
       this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tsmi_About = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControl1 = new System.Windows.Forms.TabControl();
+      this.tabPage4 = new System.Windows.Forms.TabPage();
+      this.tbx_Password = new System.Windows.Forms.TextBox();
+      this.btn_PassCreate = new System.Windows.Forms.Button();
+      this.label1 = new System.Windows.Forms.Label();
+      this.nud_PassLength = new System.Windows.Forms.NumericUpDown();
+      this.chlb_Password = new System.Windows.Forms.CheckedListBox();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
+      this.tbx_Note = new System.Windows.Forms.RichTextBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.chbx_RandomChar = new System.Windows.Forms.CheckBox();
       this.chbx_Random = new System.Windows.Forms.CheckBox();
       this.btn_RdmCopy = new System.Windows.Forms.Button();
       this.btn_RndClear = new System.Windows.Forms.Button();
@@ -50,21 +65,15 @@
       this.btn_Reset = new System.Windows.Forms.Button();
       this.btn_Minus = new System.Windows.Forms.Button();
       this.btn_Plus = new System.Windows.Forms.Button();
-      this.tabPage3 = new System.Windows.Forms.TabPage();
-      this.tbx_Note = new System.Windows.Forms.RichTextBox();
-      this.tsmi_Note = new System.Windows.Forms.ToolStripMenuItem();
-      this.tsmi_InsertDate = new System.Windows.Forms.ToolStripMenuItem();
-      this.tsmi_InsertTime = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.tsmi_NoteSave = new System.Windows.Forms.ToolStripMenuItem();
-      this.tsmi_NoteLoad = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
+      this.tabPage4.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.nud_PassLength)).BeginInit();
+      this.tabPage3.SuspendLayout();
       this.tabPage2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
       this.tabPage1.SuspendLayout();
-      this.tabPage3.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -94,6 +103,57 @@
       this.tsmi_Exit.Text = "Выход";
       this.tsmi_Exit.Click += new System.EventHandler(this.tsmi_Exit_Click);
       // 
+      // tsmi_Note
+      // 
+      this.tsmi_Note.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_InsertDate,
+            this.tsmi_InsertTime,
+            this.toolStripMenuItem1,
+            this.tsmi_NoteSave,
+            this.tsmi_NoteLoad});
+      this.tsmi_Note.Name = "tsmi_Note";
+      this.tsmi_Note.Size = new System.Drawing.Size(65, 20);
+      this.tsmi_Note.Text = "Блокнот";
+      // 
+      // tsmi_InsertDate
+      // 
+      this.tsmi_InsertDate.Name = "tsmi_InsertDate";
+      this.tsmi_InsertDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+      this.tsmi_InsertDate.Size = new System.Drawing.Size(232, 22);
+      this.tsmi_InsertDate.Text = "Вставить дату";
+      this.tsmi_InsertDate.Click += new System.EventHandler(this.tsmi_InsertDate_Click);
+      // 
+      // tsmi_InsertTime
+      // 
+      this.tsmi_InsertTime.Name = "tsmi_InsertTime";
+      this.tsmi_InsertTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+      this.tsmi_InsertTime.Size = new System.Drawing.Size(232, 22);
+      this.tsmi_InsertTime.Text = "Вставить время";
+      this.tsmi_InsertTime.Click += new System.EventHandler(this.tsmi_InsertTime_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
+      // 
+      // tsmi_NoteSave
+      // 
+      this.tsmi_NoteSave.Name = "tsmi_NoteSave";
+      this.tsmi_NoteSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+      this.tsmi_NoteSave.Size = new System.Drawing.Size(232, 22);
+      this.tsmi_NoteSave.Text = "Созранить";
+      this.tsmi_NoteSave.Click += new System.EventHandler(this.tsmi_NoteSave_Click);
+      // 
+      // tsmi_NoteLoad
+      // 
+      this.tsmi_NoteLoad.Name = "tsmi_NoteLoad";
+      this.tsmi_NoteLoad.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+      this.tsmi_NoteLoad.Size = new System.Drawing.Size(232, 22);
+      this.tsmi_NoteLoad.Text = "Загрузить";
+      this.tsmi_NoteLoad.Click += new System.EventHandler(this.tsmi_NoteLoad_Click);
+      // 
       // помощьToolStripMenuItem
       // 
       this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,6 +171,7 @@
       // 
       // tabControl1
       // 
+      this.tabControl1.Controls.Add(this.tabPage4);
       this.tabControl1.Controls.Add(this.tabPage3);
       this.tabControl1.Controls.Add(this.tabPage2);
       this.tabControl1.Controls.Add(this.tabPage1);
@@ -121,8 +182,105 @@
       this.tabControl1.Size = new System.Drawing.Size(261, 191);
       this.tabControl1.TabIndex = 1;
       // 
+      // tabPage4
+      // 
+      this.tabPage4.Controls.Add(this.tbx_Password);
+      this.tabPage4.Controls.Add(this.btn_PassCreate);
+      this.tabPage4.Controls.Add(this.label1);
+      this.tabPage4.Controls.Add(this.nud_PassLength);
+      this.tabPage4.Controls.Add(this.chlb_Password);
+      this.tabPage4.Location = new System.Drawing.Point(4, 22);
+      this.tabPage4.Name = "tabPage4";
+      this.tabPage4.Size = new System.Drawing.Size(253, 165);
+      this.tabPage4.TabIndex = 3;
+      this.tabPage4.Text = "Пароли";
+      this.tabPage4.UseVisualStyleBackColor = true;
+      // 
+      // tbx_Password
+      // 
+      this.tbx_Password.Location = new System.Drawing.Point(8, 131);
+      this.tbx_Password.Name = "tbx_Password";
+      this.tbx_Password.Size = new System.Drawing.Size(237, 20);
+      this.tbx_Password.TabIndex = 4;
+      // 
+      // btn_PassCreate
+      // 
+      this.btn_PassCreate.Location = new System.Drawing.Point(8, 102);
+      this.btn_PassCreate.Name = "btn_PassCreate";
+      this.btn_PassCreate.Size = new System.Drawing.Size(129, 23);
+      this.btn_PassCreate.TabIndex = 3;
+      this.btn_PassCreate.Text = "Создать пароль";
+      this.btn_PassCreate.UseVisualStyleBackColor = true;
+      this.btn_PassCreate.Click += new System.EventHandler(this.btn_PassCreate_Click);
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(5, 75);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(79, 13);
+      this.label1.TabIndex = 2;
+      this.label1.Text = "Длина пароля";
+      // 
+      // nud_PassLength
+      // 
+      this.nud_PassLength.Location = new System.Drawing.Point(93, 73);
+      this.nud_PassLength.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.nud_PassLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.nud_PassLength.Name = "nud_PassLength";
+      this.nud_PassLength.Size = new System.Drawing.Size(44, 20);
+      this.nud_PassLength.TabIndex = 1;
+      this.nud_PassLength.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+      // 
+      // chlb_Password
+      // 
+      this.chlb_Password.CheckOnClick = true;
+      this.chlb_Password.FormattingEnabled = true;
+      this.chlb_Password.Items.AddRange(new object[] {
+            "Цифры",
+            "Прописные буквы",
+            "Строчные буквы",
+            "Спец. символы"});
+      this.chlb_Password.Location = new System.Drawing.Point(3, 3);
+      this.chlb_Password.Name = "chlb_Password";
+      this.chlb_Password.Size = new System.Drawing.Size(242, 64);
+      this.chlb_Password.TabIndex = 0;
+      // 
+      // tabPage3
+      // 
+      this.tabPage3.Controls.Add(this.tbx_Note);
+      this.tabPage3.Location = new System.Drawing.Point(4, 22);
+      this.tabPage3.Name = "tabPage3";
+      this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage3.Size = new System.Drawing.Size(253, 165);
+      this.tabPage3.TabIndex = 2;
+      this.tabPage3.Text = "Блокнот";
+      this.tabPage3.UseVisualStyleBackColor = true;
+      // 
+      // tbx_Note
+      // 
+      this.tbx_Note.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tbx_Note.Location = new System.Drawing.Point(3, 3);
+      this.tbx_Note.Name = "tbx_Note";
+      this.tbx_Note.Size = new System.Drawing.Size(247, 159);
+      this.tbx_Note.TabIndex = 0;
+      this.tbx_Note.Text = "";
+      // 
       // tabPage2
       // 
+      this.tabPage2.Controls.Add(this.chbx_RandomChar);
       this.tabPage2.Controls.Add(this.chbx_Random);
       this.tabPage2.Controls.Add(this.btn_RdmCopy);
       this.tabPage2.Controls.Add(this.btn_RndClear);
@@ -140,6 +298,16 @@
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "Генератор";
       this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // chbx_RandomChar
+      // 
+      this.chbx_RandomChar.AutoSize = true;
+      this.chbx_RandomChar.Location = new System.Drawing.Point(9, 140);
+      this.chbx_RandomChar.Name = "chbx_RandomChar";
+      this.chbx_RandomChar.Size = new System.Drawing.Size(73, 17);
+      this.chbx_RandomChar.TabIndex = 10;
+      this.chbx_RandomChar.Text = "Символы";
+      this.chbx_RandomChar.UseVisualStyleBackColor = true;
       // 
       // chbx_Random
       // 
@@ -299,77 +467,6 @@
       this.btn_Plus.UseVisualStyleBackColor = true;
       this.btn_Plus.Click += new System.EventHandler(this.btn_Plus_Click);
       // 
-      // tabPage3
-      // 
-      this.tabPage3.Controls.Add(this.tbx_Note);
-      this.tabPage3.Location = new System.Drawing.Point(4, 22);
-      this.tabPage3.Name = "tabPage3";
-      this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage3.Size = new System.Drawing.Size(253, 165);
-      this.tabPage3.TabIndex = 2;
-      this.tabPage3.Text = "Блокнот";
-      this.tabPage3.UseVisualStyleBackColor = true;
-      // 
-      // tbx_Note
-      // 
-      this.tbx_Note.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tbx_Note.Location = new System.Drawing.Point(3, 3);
-      this.tbx_Note.Name = "tbx_Note";
-      this.tbx_Note.Size = new System.Drawing.Size(247, 159);
-      this.tbx_Note.TabIndex = 0;
-      this.tbx_Note.Text = "";
-      // 
-      // tsmi_Note
-      // 
-      this.tsmi_Note.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_InsertDate,
-            this.tsmi_InsertTime,
-            this.toolStripMenuItem1,
-            this.tsmi_NoteSave,
-            this.tsmi_NoteLoad});
-      this.tsmi_Note.Name = "tsmi_Note";
-      this.tsmi_Note.Size = new System.Drawing.Size(65, 20);
-      this.tsmi_Note.Text = "Блокнот";
-      // 
-      // tsmi_InsertDate
-      // 
-      this.tsmi_InsertDate.Name = "tsmi_InsertDate";
-      this.tsmi_InsertDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-      this.tsmi_InsertDate.Size = new System.Drawing.Size(232, 22);
-      this.tsmi_InsertDate.Text = "Вставить дату";
-      this.tsmi_InsertDate.Click += new System.EventHandler(this.tsmi_InsertDate_Click);
-      // 
-      // tsmi_InsertTime
-      // 
-      this.tsmi_InsertTime.Name = "tsmi_InsertTime";
-      this.tsmi_InsertTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.T)));
-      this.tsmi_InsertTime.Size = new System.Drawing.Size(232, 22);
-      this.tsmi_InsertTime.Text = "Вставить время";
-      this.tsmi_InsertTime.Click += new System.EventHandler(this.tsmi_InsertTime_Click);
-      // 
-      // toolStripMenuItem1
-      // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
-      // 
-      // tsmi_NoteSave
-      // 
-      this.tsmi_NoteSave.Name = "tsmi_NoteSave";
-      this.tsmi_NoteSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-      this.tsmi_NoteSave.Size = new System.Drawing.Size(232, 22);
-      this.tsmi_NoteSave.Text = "Созранить";
-      this.tsmi_NoteSave.Click += new System.EventHandler(this.tsmi_NoteSave_Click);
-      // 
-      // tsmi_NoteLoad
-      // 
-      this.tsmi_NoteLoad.Name = "tsmi_NoteLoad";
-      this.tsmi_NoteLoad.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-      this.tsmi_NoteLoad.Size = new System.Drawing.Size(232, 22);
-      this.tsmi_NoteLoad.Text = "Загрузить";
-      this.tsmi_NoteLoad.Click += new System.EventHandler(this.tsmi_NoteLoad_Click);
-      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,13 +481,16 @@
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.tabControl1.ResumeLayout(false);
+      this.tabPage4.ResumeLayout(false);
+      this.tabPage4.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.nud_PassLength)).EndInit();
+      this.tabPage3.ResumeLayout(false);
       this.tabPage2.ResumeLayout(false);
       this.tabPage2.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
       this.tabPage1.ResumeLayout(false);
       this.tabPage1.PerformLayout();
-      this.tabPage3.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -428,6 +528,13 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem tsmi_NoteSave;
     private System.Windows.Forms.ToolStripMenuItem tsmi_NoteLoad;
+    private System.Windows.Forms.TabPage tabPage4;
+    private System.Windows.Forms.CheckedListBox chlb_Password;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.NumericUpDown nud_PassLength;
+    private System.Windows.Forms.TextBox tbx_Password;
+    private System.Windows.Forms.Button btn_PassCreate;
+    private System.Windows.Forms.CheckBox chbx_RandomChar;
   }
 }
 
